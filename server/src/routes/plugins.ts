@@ -714,36 +714,37 @@ export function pluginRoutes(
    */
   function mapRpcErrorToBridgeError(err: unknown): PluginBridgeErrorResponse {
     if (err instanceof JsonRpcCallError) {
-      switch (err.code) {
+      const rpcErr = err as JsonRpcCallError;
+      switch (rpcErr.code) {
         case PLUGIN_RPC_ERROR_CODES.WORKER_UNAVAILABLE:
           return {
             code: "WORKER_UNAVAILABLE",
-            message: err.message,
-            details: err.data,
+            message: rpcErr.message,
+            details: rpcErr.data,
           };
         case PLUGIN_RPC_ERROR_CODES.CAPABILITY_DENIED:
           return {
             code: "CAPABILITY_DENIED",
-            message: err.message,
-            details: err.data,
+            message: rpcErr.message,
+            details: rpcErr.data,
           };
         case PLUGIN_RPC_ERROR_CODES.TIMEOUT:
           return {
             code: "TIMEOUT",
-            message: err.message,
-            details: err.data,
+            message: rpcErr.message,
+            details: rpcErr.data,
           };
         case PLUGIN_RPC_ERROR_CODES.WORKER_ERROR:
           return {
             code: "WORKER_ERROR",
-            message: err.message,
-            details: err.data,
+            message: rpcErr.message,
+            details: rpcErr.data,
           };
         default:
           return {
             code: "UNKNOWN",
-            message: err.message,
-            details: err.data,
+            message: rpcErr.message,
+            details: rpcErr.data,
           };
       }
     }
