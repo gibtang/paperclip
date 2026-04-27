@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "paperclip",
+  "project_id": "0970eda4-38e9-4de5-8e6e-d6ae2416b5d7"
+}
