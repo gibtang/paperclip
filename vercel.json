@@ -1,0 +1,7 @@
+{
+  "buildCommand": "pnpm --filter @paperclipai/server build",
+  "devCommand": "pnpm --filter @paperclipai/server dev",
+  "installCommand": "pnpm install",
+  "outputDirectory": "server/dist",
+  "framework": null
+}
